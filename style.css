@@ -1,5 +1,10 @@
 :root {
     --mainFont: 'Inter', sans-serif;
+    --low-color: #d3d0cb;
+    --high-color: #e7e5df;
+    --text-color: #393e41;
+    --main-color: #44bba4;
+    --second-color: #169873;
 }
 
 * {
@@ -13,7 +18,7 @@ a {
 
 body {
     display: flex;
-    background-color: #eeeeee;
+    background-color: var(--low-color);
     margin: 0;
     align-items: flex-start;
 }
@@ -26,7 +31,7 @@ body {
     width: 20%;
     overflow-y: auto;
     padding: 20px;
-    background-color: #f0f0f0;
+    background-color: var(--low-color);
     box-sizing: border-box;
 }
 
@@ -44,7 +49,7 @@ body {
 
 #quickInfo h1 {
     position: fixed;
-    color: #f0f0f0;
+    color: var(--low-color);
 }
 
 /* Yes yes, I know it's broken. I'll fix it with media queries*/
@@ -63,7 +68,7 @@ body {
 
 #contactInfo {
     margin-top: 20px;
-    background-color: #ffffff;
+    background-color: var(--high-color);
     padding: 20px;
     box-sizing: border-box;
 }
@@ -87,7 +92,7 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
-    background-color: #ffffff;
+    background-color: var(--high-color);
     border-radius: 999999px;
     margin: 10px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
@@ -118,22 +123,50 @@ body {
     width: fit-content;
     padding: 10px;
     border-radius: 10px;
-    border: solid 1px rgba(0, 0, 0, 0.2);
+    border: solid 4px var(--high-color);
+    background-color: var(--low-color);
+    transition: border 0.2s ease-out, background-color 0.2s ease-out;
+}
+
+#mainContent h2:hover {
+    border-color: var(--low-color);
+    background-color: var(--high-color);
 }
 
 #aboutMeSection {
     text-indent: 1.5em;
 }
 
+.hiddenBar {
+    width: 100%;
+    height: 4px;
+    border-radius: 999999px;
+    background-color: var(--high-color);
+}
+
 .infoCard {
     display: flex;
     align-items: center;
     gap: 15px;
-    background-color: #ffffff;
+    background-color: var(--high-color);
     border-radius: 999999px;
     margin: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
+    box-shadow: 2px 2px 5px var;
+    transition: transform 0.2s ease-out;
+}
+
+.asdCard {
+    background-color: var(--main-color);
+    border: 8px inset var(--second-color);
+    transition: border 0.5s ease-out, background-color 0.5s ease-out;
+}
+
+
+.asdCard:hover {
+    background-color: var(--second-color);
+    border-color: var(--main-color);
+    border-style: outset;
+    transition: border 0.5s ease-out, background-color 0.5s ease-out;
 }
 
 .infoCard img {
@@ -141,7 +174,7 @@ body {
     width: 150px;
     height: 150px;
     object-fit: contain;
-    border-radius: 9999px;
+    border-radius: 999999px;
 }
 
 .infoCardContent {
@@ -170,7 +203,7 @@ body {
     /* Yes yes, I know it's broken. I'll fix it with better media queries*/
     #quickInfo h1 {
         position: static;
-        color: #ffffff;
+        color: var(--high-color);
         font-size: 1rem;
         top: 0%;
         left: 0%;
