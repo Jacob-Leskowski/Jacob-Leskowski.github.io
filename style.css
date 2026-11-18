@@ -302,6 +302,27 @@ body {
     #mainContent {
         overflow-y: visible;
     }
+
+    #quickInfo {
+        flex-direction: row;
+    }
+
+    #heroImage {
+        width: 50%;
+    }
+
+    #name {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #first {
+        margin-bottom: -24px;
+    }
 }
 
 @media (max-width: 400px) {
