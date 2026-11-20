@@ -7,6 +7,8 @@
     --second-color: #169873;
 }
 
+/* #region Whole Page */
+
 * {
     font-family: var(--mainFont);
 }
@@ -47,6 +49,10 @@ body {
     box-sizing: border-box;
 }
 
+/* #endregion */
+
+/* #region Quick Info */
+
 #quickInfo {
     display: flex;
     flex-direction: column;
@@ -83,7 +89,9 @@ body {
     ;
 }
 
-/* #region Contact Info Styles */
+/* #endregion */
+
+/* #region Contact Info */
 
 .noScrollBar {
     overflow: auto;
@@ -161,7 +169,6 @@ body {
 
 /* #endregion */
 
-
 /* #region Form Styles */
 
 #contact-form {
@@ -205,6 +212,8 @@ body {
 
 /* #endregion */
 
+/* #region Card Casubg */
+
 .unselectable {
     -webkit-user-select: none;
     user-select: none;
@@ -242,6 +251,10 @@ body {
     background-color: var(--high-color);
 }
 
+/* #endregion */
+
+/* #region Cards and Speical Cards */
+
 .infoCard {
     display: flex;
     align-items: center;
@@ -275,6 +288,19 @@ body {
     border-radius: 999999px;
 }
 
+.infoCard svg {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin-left: 0px;
+    padding: 24px;
+    border-radius: 999999px;
+}
+
+.asdCard svg {
+    margin: 0px;
+}
+
 .infoCardContent {
     flex: 1;
     overflow: wrap;
@@ -286,6 +312,87 @@ body {
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-out;
 }
+
+/* #endregion */
+
+/* #region ID SVG */
+
+.infoCard svg {
+    fill: black;
+    background-color: white;
+    transition: fill 0.3s ease-out, background-color 0.3s ease-out;
+}
+
+.infoCard:hover svg {
+    fill: white;
+    background-color: black;
+    transition: fill 0.3s ease-out, background-color 0.3s ease-out;
+}
+
+#stateSVG {
+    fill: #1AA260;
+    background-color: #50C878;
+    transition: fill 0.3s ease-out, background-color 0.3s ease-out;
+}
+
+.infoCard:hover #stateSVG {
+    fill: #50C878;
+    background-color: #1AA260;
+    transition: fill 0.3s ease-out, background-color 0.3s ease-out;
+}
+
+#interpSVG {
+    fill: #990012;
+    background-color: #F67280;
+    transition: fill 0.3s ease-out, background-color 0.3s ease-out;
+}
+
+.infoCard:hover #interpSVG {
+    fill: #F67280;
+    background-color: #990012;
+    transition: fill 0.3s ease-out, background-color 0.3s ease-out;
+}
+
+#comSVG {
+    fill: #000072;
+    background-color: #2554C7;
+    transition: fill 0.3s ease-out, background-color 0.3s ease-out;
+}
+
+.infoCard:hover #comSVG {
+    fill: #2554C7;
+    background-color: #000072;
+    transition: fill 0.3s ease-out, background-color 0.3s ease-out;
+}
+
+#preformSVG {
+    fill: #571B7E;
+    background-color: #967BB6;
+    transition: fill 0.3s ease-out, background-color 0.3s ease-out;
+}
+
+.infoCard:hover #preformSVG {
+    fill: #967BB6;
+    background-color: #571B7E;
+    transition: fill 0.3s ease-out, background-color 0.3s ease-out;
+}
+
+#debateSVG {
+    fill: #B87333;
+    background-color: #E8A317;
+    transition: fill 0.3s ease-out, background-color 0.3s ease-out;
+}
+
+.infoCard:hover #debateSVG {
+    fill: #E8A317;
+    background-color: #B87333;
+    transition: fill 0.3s ease-out, background-color 0.3s ease-out;
+}
+
+/* #endregion */
+
+/* #region Small Screen */
+
 
 @media (max-width: 900px) {
     body {
@@ -336,3 +443,5 @@ body {
         padding: 0px 100px;
     }
 }
+
+/* #endregion */
