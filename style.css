@@ -608,6 +608,25 @@ body {
 
 /* #endregion */
 
+/* #region Footer */
+
+#doubleSpacing {
+    display: none;
+}
+
+#mainFooter {
+    align-items: center;
+    text-align: center;
+    background-color: var(--high-color);
+    border-radius: 99999px;
+    margin-top: 16px;
+    padding: 4px 16px;
+    font-weight: 0;
+    font-size: 0.6rem;
+}
+
+/* #endregion */
+
 /* #region Small Screen */
 
 
@@ -658,6 +677,35 @@ body {
     .infoCard .infoCardContent {
         text-align: center;
         padding: 0px 100px;
+    }
+}
+
+/* #endregion */
+
+/* #region Large Screen */
+
+@media (min-width: 1400px) {
+    .overallCardCase {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px;
+    }
+
+
+    .largeCase,
+    .infoCard {
+        width: calc((100vw / 2) - 294px);
+        min-width: calc((100vw / 2) - 294px);
+    }
+
+    .hiddenBar {
+        flex: none;
+    }
+
+    .doubleSpacing {
+        display: block;
+        flex: 1;
+        /* background-color: red; */
     }
 }
 

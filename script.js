@@ -1,3 +1,5 @@
+var working = 0;
+
 var titles = ["about", "projects", "languages", "education", "accomplishments"];
 
 
@@ -11,27 +13,45 @@ function hideSection(index) {
     console.log(`Hiding ${index}`);
     sectionSections[index].style.display = 'none';
     // sectionCase[index].style.flexDirection = "row";
-    sectionBars[index].style.flex = "1 1 200px;";
     sectionButtons[index].style.display = "inline";
     sectionBars[index].style.display = "inline";
+    if (window.innerWidth < 1400) {
+        sectionBars[index].style.flex = "1 1 200px;";
+    } else {
+        sectionBars[index].style.flex = "none";
+    }
 }
 
 function showSection(index) {
     console.log(`Showing ${index}`);
     sectionSections[index].style.display = 'block';
     // sectionCase[index].style.flexDirection = "column";
-    sectionBars[index].style.flex = "auto";
     sectionButtons[index].style.display = "block";
     sectionBars[index].style.display = "block";
+    if (window.innerWidth < 1400) {
+        sectionBars[index].style.flex = "auto";
+    } else {
+        sectionBars[index].style.flex = "none";
+    }
 }
 
-function flip(index) {
-    sectionStates[index] = !sectionStates[index];
+function update(index) {
     if (sectionStates[index]) {
         hideSection(index);
     } else {
         showSection(index);
     }
+}
+
+function updateAll() {
+    for (var i = 0; i < titles.length; i++) {
+        update(i);
+    }
+}
+
+function flip(index) {
+    sectionStates[index] = !sectionStates[index];
+    update(index);
 }
 
 function addSection(index) {
@@ -48,5 +68,12 @@ function addSection(index) {
 
 for (var i = 0; i < titles.length; i++) {
     addSection(i);
+    if (i < working) {
+        flip(i);
+    }
 }
 i = null;
+
+window.addEventListener('resize', function (event) {
+    updateAll();
+}, true);
