@@ -5,10 +5,60 @@
     --text-color: #393e41;
     --main-color: #44bba4;
     --second-color: #169873;
-    --transitionType: ease-out;
+    --transitionType: cubic-bezier(0.28, 0.92, 0.02, 0.88);
     /* cubic-bezier(0.07, 1.34, 0.16, 0.51) */
-    --transitionTime: 0.3s;
+    --transitionTime: 1s;
     --fastTransitionTime: 0.2s;
+
+    --stateOld: #1AA260;
+    --interpOld: #990012;
+    --comOLD: #000072;
+    --preform: #571B7E;
+    --debateOld: #B87333;
+
+    --macroMakerDark: #2B2B2B;
+    --macroMakerLight: #1664AF;
+    --gogamesjackDark: #5865F2;
+    --gogamesjackLight: #E0E3FF;
+    --procrastinatorDark: #C940A2;
+    --procrastinatorLight: #FC77B8;
+
+    --pythonDark: #4886B9;
+    --pythonLight: #FFDA4D;
+    --javaDark: #f24c10;
+    --javaLight: #FFFFFF;
+
+    --norrixDark: #00264D;
+    --norrixLight: #99BCE4;
+    --csaDark: #1E293B;
+    --csaLight: #38BDF8;
+    --cspDark: #312E81;
+    --cspLight: #A5F3FC;
+    --cteDark: #b9da01;
+    --cteLight: #02BBB5;
+    --phyDark: #0F172A;
+    --phyLight: #FACC15;
+    --calcDark: #1D4ED8;
+    --calcLight: #DBEAFE;
+    --pcDark: #4C1D95;
+    --pcLight: #ded8fc;
+    --govDark: #1E3A8A;
+    --govLight: #FCA5A5;
+    --ushDark: #7C2D12;
+    --ushLight: #FEF3C7;
+    --langDark: #111827;
+    --langLight: #FDE68A;
+
+    --stateDark: #FDE68A;
+    --stateLight: #50C878;
+    --interpDark: #FED7AA;
+    --interpLight: #F67280;
+    --comDark: #67E8F9;
+    --comLight: #2554C7;
+    --preformDark: #4C0519;
+    --preformLight: #967BB6;
+    --debateDark: #14532D;
+    --debateLight: #E8A317;
 }
 
 /* #region Whole Page */
@@ -342,39 +392,33 @@ body {
 /* #region Projects SVG */
 
 #macroMakerSVG {
-    fill: #2B2B2B;
-    background-color: #1664AF;
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--macroMakerDark);
+    background-color: var(--macroMakerLight);
 }
 
 .infoCard:hover #macroMakerSVG {
-    fill: #1664AF;
-    background-color: #2B2B2B;
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--macroMakerLight);
+    background-color: var(--macroMakerDark);
 }
 
 #gogamesjackSVG {
-    fill: #5865F2;
-    background-color: #E0E3FF;
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--gogamesjackDark);
+    background-color: var(--gogamesjackLight);
 }
 
 .infoCard:hover #gogamesjackSVG {
-    fill: #E0E3FF;
-    background-color: #5865F2;
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--gogamesjackLight);
+    background-color: var(--gogamesjackDark);
 }
 
 #procrastinatorSVG {
-    fill: #C940A2;
-    background-color: #FC77B8;
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--procrastinatorDark);
+    background-color: var(--procrastinatorLight);
 }
 
 .infoCard:hover #procrastinatorSVG {
-    fill: #FC77B8;
-    background-color: #C940A2;
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--procrastinatorLight);
+    background-color: var(--procrastinatorDark);
 }
 
 /* #endregion */
@@ -382,27 +426,23 @@ body {
 /* #region Languages SVG */
 
 #pythonSVG {
-    fill: #4886B9;
-    background-color: #FFDA4D;
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--pythonDark);
+    background-color: var(--pythonLight);
 }
 
 .infoCard:hover #pythonSVG {
-    fill: #FFDA4D;
-    background-color: #4886B9;
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--pythonLight);
+    background-color: var(--pythonDark);
 }
 
 #javaSVG {
-    fill: #f24c10;
-    background-color: #FFFFFF;
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--javaDark);
+    background-color: var(--javaLight);
 }
 
 .infoCard:hover #javaSVG {
-    fill: #FFFFFF;
-    background-color: #f24c10;
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--javaLight);
+    background-color: var(--javaDark);
 }
 
 /* #endregion */
@@ -410,125 +450,104 @@ body {
 /* #region Education SVG */
 
 #norrixSVG {
-    fill: #00264D;
-    background-color: #99BCE4;
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--norrixDark);
+    background-color: var(--norrixLight);
 }
 
 .infoCard:hover #norrixSVG {
-    fill: #99BCE4;
-    background-color: #00264D;
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--norrixLight);
+    background-color: var(--norrixDark);
 }
 
 #csaSVG {
-    fill: #1E293B;
-    background-color: #38BDF8;
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--csaDark);
+    background-color: var(--csaLight);
 }
 
 .infoCard:hover #csaSVG {
-    fill: #38BDF8;
-    background-color: #1E293B;
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--csaLight);
+    background-color: var(--csaDark);
 }
 
 #cspSVG {
-    fill: #312E81;
-    background-color: #A5F3FC;
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--cspDark);
+    background-color: var(--cspLight);
 }
 
 .infoCard:hover #cspSVG {
-    fill: #A5F3FC;
-    background-color: #312E81;
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--cspLight);
+    background-color: var(--cspDark);
 }
 
 #cteSVG {
-    fill: #b9da01;
-    background-color: #02BBB5;
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--cteDark);
+    background-color: var(--cteLight);
 }
 
 .infoCard:hover #cteSVG {
-    fill: #02BBB5;
-    background-color: #b9da01;
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--cteLight);
+    background-color: var(--cteDark);
 }
 
 #phySVG {
-    /* SWITCH */
-    fill: #0F172A;
-    background-color: #FACC15;
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--phyDark);
+    background-color: var(--phyLight);
 }
 
 .infoCard:hover #phySVG {
-    fill: #FACC15;
-    background-color: #0F172A;
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
-}
-
-#pcSVG {
-    fill: #1D4ED8;
-    background-color: #DBEAFE;
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
-}
-
-.infoCard:hover #pcSVG {
-    fill: #DBEAFE;
-    background-color: #1D4ED8;
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--phyLight);
+    background-color: var(--phyDark);
 }
 
 #calcSVG {
-    fill: #4C1D95;
-    background-color: #EDE9FE;
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--calcDark);
+    background-color: var(--calcLight);
 }
 
 .infoCard:hover #calcSVG {
-    fill: #EDE9FE;
-    background-color: #4C1D95;
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--calcLight);
+    background-color: var(--calcDark);
+}
+
+#pcSVG {
+    fill: var(--pcDark);
+    background-color: var(--pcLight);
+}
+
+.infoCard:hover #pcSVG {
+    fill: var(--pcLight);
+    background-color: var(--pcDark);
 }
 
 
 #govSVG {
-    fill: #1E3A8A;
-    background-color: #FCA5A5;
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--govDark);
+    background-color: var(--govLight);
 }
 
 .infoCard:hover #govSVG {
-    fill: #FCA5A5;
-    background-color: #1E3A8A;
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--govLight);
+    background-color: var(--govDark);
 }
 
 #ushSVG {
-    fill: #7C2D12;
-    background-color: #FEF3C7;
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--ushDark);
+    background-color: var(--ushLight);
 }
 
 .infoCard:hover #ushSVG {
-    fill: #FEF3C7;
-    background-color: #7C2D12;
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--ushLight);
+    background-color: var(--ushDark);
 }
 
 #langSVG {
-    fill: #111827;
-    background-color: #FDE68A;
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--langDark);
+    background-color: var(--langLight);
 }
 
 .infoCard:hover #langSVG {
-    fill: #FDE68A;
-    background-color: #111827;
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--langLight);
+    background-color: var(--langDark);
 }
 
 
@@ -537,73 +556,53 @@ body {
 /* #region Accomplishments SVG */
 
 #stateSVG {
-    fill: #FDE68A;
-    /* 1AA260 */
-    background-color: #50C878;
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--stateDark);
+    background-color: var(--stateLight);
 }
 
 .infoCard:hover #stateSVG {
-    fill: #50C878;
-    background-color: #FDE68A;
-    /* 1AA260 */
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--stateLight);
+    background-color: var(--stateDark);
 }
 
 #interpSVG {
-    fill: #FED7AA;
-    /* 990012 */
-    background-color: #F67280;
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--interpDark);
+    background-color: var(--interpLight);
 }
 
 .infoCard:hover #interpSVG {
-    fill: #F67280;
-    background-color: #FED7AA;
-    /* 990012 */
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--interpLight);
+    background-color: var(--interpDark);
 }
 
 #comSVG {
-    fill: #67E8F9;
-    /* 000072 */
-    background-color: #2554C7;
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--comDark);
+    background-color: var(--comLight);
 }
 
 .infoCard:hover #comSVG {
-    fill: #2554C7;
-    background-color: #67E8F9;
-    /* 000072 */
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--comLight);
+    background-color: var(--comDark);
 }
 
 #preformSVG {
-    fill: #4C0519;
-    /* 571B7E */
-    background-color: #967BB6;
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--preformDark);
+    background-color: var(--preformLight);
 }
 
 .infoCard:hover #preformSVG {
-    fill: #967BB6;
-    background-color: #4C0519;
-    /* 571B7E */
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--preformLight);
+    background-color: var(--preformDark);
 }
 
 #debateSVG {
-    fill: #14532D;
-    /* B87333 */
-    background-color: #E8A317;
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--debateDark);
+    background-color: var(--debateLight);
 }
 
 .infoCard:hover #debateSVG {
-    fill: #E8A317;
-    background-color: #14532D;
-    /* B87333 */
-    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+    fill: var(--debateLight);
+    background-color: var(--debateDark);
 }
 
 /* #endregion */
