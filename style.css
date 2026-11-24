@@ -5,6 +5,10 @@
     --text-color: #393e41;
     --main-color: #44bba4;
     --second-color: #169873;
+    --transitionType: ease-out;
+    /* cubic-bezier(0.07, 1.34, 0.16, 0.51) */
+    --transitionTime: 0.3s;
+    --fastTransitionTime: 0.2s;
 }
 
 /* #region Whole Page */
@@ -72,12 +76,12 @@ body {
     display: inline;
     color: var(--main-color);
     font-size: 2rem;
-    transition: color 0.3s ease-out;
+    transition: color var(--transitionTime) var(--transitionType);
 }
 
 #name:hover h1 {
     color: var(--second-color);
-    transition: color 0.3s ease-out;
+    transition: color var(--transitionTime) var(--transitionType);
 }
 
 
@@ -86,7 +90,7 @@ body {
     height: auto;
     object-fit: contain;
     border-radius: 999999px;
-    ;
+    transition: border-radius var(--transitionTime) var(--transitionType);
 }
 
 /* #endregion */
@@ -130,7 +134,7 @@ body {
     border-radius: 999999px;
     margin: 10px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out;
+    transition: transform var(--fastTransitionTime) var(--transitionType);
     font-size: 0.9rem;
     background-color: white;
 }
@@ -145,13 +149,13 @@ body {
     object-fit: contain;
     border-radius: 99999px;
     fill: var(--main-color);
-    transition: fill 0.2s ease-in-out;
+    transition: fill var(--fastTransitionTime) var(--transitionType);
 }
 
 .contactCard:hover svg,
 .contactCard:hover img {
     fill: var(--second-color);
-    transition: fill 0.2s ease-in-out;
+    transition: fill var(--fastTransitionTime) var(--transitionType);
 }
 
 .contactCard:hover {
@@ -222,6 +226,7 @@ body {
 .largeCase {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 #mainContent h2 {
@@ -231,13 +236,13 @@ body {
     border: solid 4px var(--high-color);
     border-color: var(--low-color);
     background-color: var(--high-color);
-    transition: border 0.3s ease-out, background-color 0.3s ease-out;
+    transition: border var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
 }
 
 #mainContent h2:hover {
     border-color: var(--high-color);
     background-color: var(--low-color);
-    transition: border 0.3s ease-out, background-color 0.3s ease-out;
+    transition: border var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
 }
 
 #aboutMeSection {
@@ -247,8 +252,11 @@ body {
 .hiddenBar {
     flex: auto;
     height: 4px;
+    /* margin: 20px; */
     border-radius: 999999px;
     background-color: var(--high-color);
+    justify-content: center;
+    align-items: center;
 }
 
 /* #endregion */
@@ -263,13 +271,13 @@ body {
     border-radius: 999999px;
     margin: 10px;
     box-shadow: 2px 2px 5px var;
-    transition: transform 0.3s ease-out;
+    transition: transform var(--transitionTime) var(--transitionType), box-shadow var(--transitionTime) var(--transitionType), border-radius var(--transitionTime) var(--transitionType);
 }
 
 .asdCard {
     background-color: var(--main-color);
     border: 8px inset var(--second-color);
-    transition: border 0.3s ease-out, background-color 0.3s ease-out, transform 0.3s ease-out;
+    transition: border var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType), transform var(--transitionTime) var(--transitionType), border-radius var(--transitionTime) var(--transitionType);
 }
 
 
@@ -277,7 +285,7 @@ body {
     background-color: var(--second-color);
     border-color: var(--main-color);
     border-style: outset;
-    transition: border 0.3s ease-out, background-color 0.3s ease-out, transform 0.3s ease-out;
+    transition: border var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType), transform var(--transitionTime) var(--transitionType), border-radius var(--transitionTime) var(--transitionType);
 }
 
 .infoCard img {
@@ -310,83 +318,292 @@ body {
 .infoCard:hover {
     transform: translateY(-5px);
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-out;
+    transition: transform var(--transitionTime) var(--transitionType);
 }
 
 /* #endregion */
 
-/* #region ID SVG */
+/* #region About SVG */
 
 .infoCard svg {
     fill: black;
     background-color: white;
-    transition: fill 0.3s ease-out, background-color 0.3s ease-out;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
 }
 
 .infoCard:hover svg {
     fill: white;
     background-color: black;
-    transition: fill 0.3s ease-out, background-color 0.3s ease-out;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
 }
 
+/* #endregion */
+
+/* #region Projects SVG */
+
+#macroMakerSVG {
+    fill: #2B2B2B;
+    background-color: #1664AF;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+}
+
+.infoCard:hover #macroMakerSVG {
+    fill: #1664AF;
+    background-color: #2B2B2B;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+}
+
+#gogamesjackSVG {
+    fill: #5865F2;
+    background-color: #E0E3FF;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+}
+
+.infoCard:hover #gogamesjackSVG {
+    fill: #E0E3FF;
+    background-color: #5865F2;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+}
+
+#procrastinatorSVG {
+    fill: #C940A2;
+    background-color: #FC77B8;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+}
+
+.infoCard:hover #procrastinatorSVG {
+    fill: #FC77B8;
+    background-color: #C940A2;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+}
+
+/* #endregion */
+
+/* #region Languages SVG */
+
+#pythonSVG {
+    fill: #4886B9;
+    background-color: #FFDA4D;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+}
+
+.infoCard:hover #pythonSVG {
+    fill: #FFDA4D;
+    background-color: #4886B9;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+}
+
+#javaSVG {
+    fill: #f24c10;
+    background-color: #FFFFFF;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+}
+
+.infoCard:hover #javaSVG {
+    fill: #FFFFFF;
+    background-color: #f24c10;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+}
+
+/* #endregion */
+
+/* #region Education SVG */
+
+#norrixSVG {
+    fill: #00264D;
+    background-color: #99BCE4;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+}
+
+.infoCard:hover #norrixSVG {
+    fill: #99BCE4;
+    background-color: #00264D;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+}
+
+#csaSVG {
+    fill: #1E293B;
+    background-color: #38BDF8;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+}
+
+.infoCard:hover #csaSVG {
+    fill: #38BDF8;
+    background-color: #1E293B;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+}
+
+#cspSVG {
+    fill: #312E81;
+    background-color: #A5F3FC;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+}
+
+.infoCard:hover #cspSVG {
+    fill: #A5F3FC;
+    background-color: #312E81;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+}
+
+#cteSVG {
+    fill: #b9da01;
+    background-color: #02BBB5;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+}
+
+.infoCard:hover #cteSVG {
+    fill: #02BBB5;
+    background-color: #b9da01;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+}
+
+#phySVG {
+    /* SWITCH */
+    fill: #0F172A;
+    background-color: #FACC15;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+}
+
+.infoCard:hover #phySVG {
+    fill: #FACC15;
+    background-color: #0F172A;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+}
+
+#pcSVG {
+    fill: #1D4ED8;
+    background-color: #DBEAFE;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+}
+
+.infoCard:hover #pcSVG {
+    fill: #DBEAFE;
+    background-color: #1D4ED8;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+}
+
+#calcSVG {
+    fill: #4C1D95;
+    background-color: #EDE9FE;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+}
+
+.infoCard:hover #calcSVG {
+    fill: #EDE9FE;
+    background-color: #4C1D95;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+}
+
+
+#govSVG {
+    fill: #1E3A8A;
+    background-color: #FCA5A5;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+}
+
+.infoCard:hover #govSVG {
+    fill: #FCA5A5;
+    background-color: #1E3A8A;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+}
+
+#ushSVG {
+    fill: #7C2D12;
+    background-color: #FEF3C7;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+}
+
+.infoCard:hover #ushSVG {
+    fill: #FEF3C7;
+    background-color: #7C2D12;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+}
+
+#langSVG {
+    fill: #111827;
+    background-color: #FDE68A;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+}
+
+.infoCard:hover #langSVG {
+    fill: #FDE68A;
+    background-color: #111827;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
+}
+
+
+/* #endregion */
+
+/* #region Accomplishments SVG */
+
 #stateSVG {
-    fill: #1AA260;
+    fill: #FDE68A;
+    /* 1AA260 */
     background-color: #50C878;
-    transition: fill 0.3s ease-out, background-color 0.3s ease-out;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
 }
 
 .infoCard:hover #stateSVG {
     fill: #50C878;
-    background-color: #1AA260;
-    transition: fill 0.3s ease-out, background-color 0.3s ease-out;
+    background-color: #FDE68A;
+    /* 1AA260 */
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
 }
 
 #interpSVG {
-    fill: #990012;
+    fill: #FED7AA;
+    /* 990012 */
     background-color: #F67280;
-    transition: fill 0.3s ease-out, background-color 0.3s ease-out;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
 }
 
 .infoCard:hover #interpSVG {
     fill: #F67280;
-    background-color: #990012;
-    transition: fill 0.3s ease-out, background-color 0.3s ease-out;
+    background-color: #FED7AA;
+    /* 990012 */
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
 }
 
 #comSVG {
-    fill: #000072;
+    fill: #67E8F9;
+    /* 000072 */
     background-color: #2554C7;
-    transition: fill 0.3s ease-out, background-color 0.3s ease-out;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
 }
 
 .infoCard:hover #comSVG {
     fill: #2554C7;
-    background-color: #000072;
-    transition: fill 0.3s ease-out, background-color 0.3s ease-out;
+    background-color: #67E8F9;
+    /* 000072 */
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
 }
 
 #preformSVG {
-    fill: #571B7E;
+    fill: #4C0519;
+    /* 571B7E */
     background-color: #967BB6;
-    transition: fill 0.3s ease-out, background-color 0.3s ease-out;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
 }
 
 .infoCard:hover #preformSVG {
     fill: #967BB6;
-    background-color: #571B7E;
-    transition: fill 0.3s ease-out, background-color 0.3s ease-out;
+    background-color: #4C0519;
+    /* 571B7E */
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
 }
 
 #debateSVG {
-    fill: #B87333;
+    fill: #14532D;
+    /* B87333 */
     background-color: #E8A317;
-    transition: fill 0.3s ease-out, background-color 0.3s ease-out;
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
 }
 
 .infoCard:hover #debateSVG {
     fill: #E8A317;
-    background-color: #B87333;
-    transition: fill 0.3s ease-out, background-color 0.3s ease-out;
+    background-color: #14532D;
+    /* B87333 */
+    transition: fill var(--transitionTime) var(--transitionType), background-color var(--transitionTime) var(--transitionType);
 }
 
 /* #endregion */

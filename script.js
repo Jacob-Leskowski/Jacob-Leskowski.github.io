@@ -10,7 +10,7 @@ var sectionStates = []
 function hideSection(index) {
     console.log(`Hiding ${index}`);
     sectionSections[index].style.display = 'none';
-    sectionCase[index].style.direction = "row";
+    // sectionCase[index].style.flexDirection = "row";
     sectionBars[index].style.flex = "1 1 200px;";
     sectionButtons[index].style.display = "inline";
     sectionBars[index].style.display = "inline";
@@ -19,7 +19,7 @@ function hideSection(index) {
 function showSection(index) {
     console.log(`Showing ${index}`);
     sectionSections[index].style.display = 'block';
-    sectionCase[index].style.direction = "column";
+    // sectionCase[index].style.flexDirection = "column";
     sectionBars[index].style.flex = "auto";
     sectionButtons[index].style.display = "block";
     sectionBars[index].style.display = "block";
